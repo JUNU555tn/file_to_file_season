@@ -46,60 +46,23 @@ async def channel_post(client: Client, message: Message):
         # Copy message to saved messages (user client) or DB channel
         if hasattr(client, 'user_client') and client.user_client:
             try:
-                # Copy message to user client's saved messages
-                # Using copy instead of forward to avoid peer access issues
-                if message.video:
-                    post_message = await client.user_client.send_video(
-                        chat_id="me",
-                        video=message.video.file_id,
-                        caption=message.caption,
-                        duration=message.video.duration,
-                        width=message.video.width,
-                        height=message.video.height,
-                        thumb=thumbnail_path if thumbnail_path else None
-                    )
-                elif message.document:
-                    post_message = await client.user_client.send_document(
-                        chat_id="me",
-                        document=message.document.file_id,
-                        caption=message.caption,
-                        file_name=message.document.file_name,
-                        thumb=thumbnail_path if thumbnail_path else None
-                    )
-                elif message.photo:
-                    post_message = await client.user_client.send_photo(
-                        chat_id="me",
-                        photo=message.photo.file_id,
-                        caption=message.caption
-                    )
-                elif message.audio:
-                    post_message = await client.user_client.send_audio(
-                        chat_id="me",
-                        audio=message.audio.file_id,
-                        caption=message.caption,
-                        thumb=thumbnail_path if thumbnail_path else None
-                    )
-                elif message.animation:
-                    post_message = await client.user_client.send_animation(
-                        chat_id="me",
-                        animation=message.animation.file_id,
-                        caption=message.caption,
-                        thumb=thumbnail_path if thumbnail_path else None
-                    )
-                elif message.voice:
-                    post_message = await client.user_client.send_voice(
-                        chat_id="me",
-                        voice=message.voice.file_id,
-                        caption=message.caption
-                    )
-                elif message.text:
-                    post_message = await client.user_client.send_message(
-                        chat_id="me",
-                        text=message.text
-                    )
-                else:
-                    # Unsupported media type, copy the message
-                    post_message = await message.copy(chat_id="me")
+                # First, the bot forwards the message to the user client's account
+                # This creates a bridge between bot and user client
+                forwarded = await message.forward(chat_id=client.storage_user_id)
+                
+                # Small delay to ensure message is available
+                await asyncio.sleep(0.5)
+                
+                # Now user client can copy it to saved messages
+                post_message = await client.user_client.copy_message(
+                    chat_id="me",
+                    from_chat_id=client.storage_user_id,
+                    message_id=forwarded.id
+                )
+                
+                # Delete the forwarded message from user's chat to keep it clean
+                await forwarded.delete()
+                
             except Exception as e:
                 print(f"Error copying to saved messages: {e}")
                 # Fallback to channel storage on error (if available)
