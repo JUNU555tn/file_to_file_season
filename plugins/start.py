@@ -1,4 +1,3 @@
-
 from pyrogram import Client, filters
 from pyrogram.types import Message, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import FloodWait, ChannelBanned, ChannelPrivate, ChatAdminRequired, PeerIdInvalid
@@ -9,7 +8,7 @@ import random
 import string
 from config import *
 from database.database import (
-    add_user, present_user, get_verify_status, update_verify_status, 
+    add_user, present_user, get_verify_status, update_verify_status,
     user_data, is_banned_user, increment_file_clicks
 )
 from helper_func import (
@@ -42,7 +41,7 @@ async def check_subscription_callback(client: Client, query: CallbackQuery):
         await query.message.delete()
     except:
         pass
-    
+
     # Auto-trigger /start command
     class FakeMessage:
         def __init__(self, original_query):
@@ -50,13 +49,13 @@ async def check_subscription_callback(client: Client, query: CallbackQuery):
             self.chat = original_query.message.chat
             self.text = "/start"
             self.message_id = original_query.message.message_id
-            
+
         async def reply(self, *args, **kwargs):
             return await client.send_message(self.chat.id, *args, **kwargs)
-        
+
         async def reply_text(self, *args, **kwargs):
             return await client.send_message(self.chat.id, *args, **kwargs)
-    
+
     fake_msg = FakeMessage(query)
     await start_handler(client, fake_msg)
 
@@ -89,12 +88,12 @@ async def start_handler(client: Client, message: Message):
             for index, channel_id in non_joined_channels:
                 if index < len(client.invitelinks):
                     buttons.append([InlineKeyboardButton(f"Join Channel {index+1}", url=client.invitelinks[index])])
-        
+
         # Add "Try Again" button
         buttons.append([InlineKeyboardButton("🔄 Try Again", url=f"https://t.me/{BOT_USERNAME}?start=restart")])
 
         await checking_msg.delete()
-        
+
         # Only send markup if there are buttons
         if buttons:
             return await message.reply(
@@ -228,7 +227,7 @@ async def start_handler(client: Client, message: Message):
         if token.startswith('file_'):
             # Extract the actual token (remove 'file_' prefix)
             actual_token = token.replace('file_', '', 1)
-            
+
             from helper_func import get_file_ids_from_token
             message_ids = await get_file_ids_from_token(actual_token)
 
@@ -288,18 +287,22 @@ async def start_handler(client: Client, message: Message):
         if 'ids' in locals():
             files_sent = 0
             files_skipped = 0
-            
+
             for msg_id in ids:
-                if msg_id is None: 
+                if msg_id is None:
                     continue
+
+                caption_text = ""
+                reply_markup = None
+
                 try:
-                    # Try to get from saved messages first (user client)
+                    # Fetch from user client's saved messages if available
                     if hasattr(client, 'user_client') and client.user_client:
-                        msg = await client.user_client.get_messages(chat_id="me", message_ids=msg_id)
+                        msg = await client.user_client.get_messages("me", msg_id)
                     else:
-                        # Fallback to channel storage
-                        msg = await client.get_messages(chat_id=client.db_channel.id, message_ids=msg_id)
-                    print(f"📥 Retrieved message for user {user_id}, msg_id: {msg_id}, msg exists: {msg is not None}, empty: {msg.empty if msg else 'N/A'}")
+                        msg = await client.get_messages(client.db_channel.id, msg_id)
+
+                    print(f"📥 Retrieved message for user {user_id}, msg_id: {msg_id}")
 
                 except ChannelBanned:
                     print(f"❌ Channel banned - user {user_id}, msg_id: {msg_id}")
@@ -345,16 +348,79 @@ async def start_handler(client: Client, message: Message):
                     continue
 
                 try:
-                    print(f"📤 Attempting to copy message to user {user_id}")
-                    sent_msg = await msg.copy(chat_id=user_id, protect_content=PROTECT_CONTENT)
+                    print(f"📤 Attempting to send message to user {user_id}")
 
-                    if sent_msg:
-                        print(f"✅ Message copied successfully to user {user_id}")
+                    # Send the file using bot client with file_id from user client's message
+                    if msg.video:
+                        sent = await client.send_video(
+                            chat_id=user_id,
+                            video=msg.video.file_id,
+                            caption=caption_text,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
+                        )
+                    elif msg.document:
+                        sent = await client.send_document(
+                            chat_id=user_id,
+                            document=msg.document.file_id,
+                            caption=caption_text,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
+                        )
+                    elif msg.photo:
+                        sent = await client.send_photo(
+                            chat_id=user_id,
+                            photo=msg.photo.file_id,
+                            caption=caption_text,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
+                        )
+                    elif msg.audio:
+                        sent = await client.send_audio(
+                            chat_id=user_id,
+                            audio=msg.audio.file_id,
+                            caption=caption_text,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
+                        )
+                    elif msg.animation:
+                        sent = await client.send_animation(
+                            chat_id=user_id,
+                            animation=msg.animation.file_id,
+                            caption=caption_text,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
+                        )
+                    elif msg.voice:
+                        sent = await client.send_voice(
+                            chat_id=user_id,
+                            voice=msg.voice.file_id,
+                            caption=caption_text,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
+                        )
+                    elif msg.text:
+                        sent = await client.send_message(
+                            chat_id=user_id,
+                            text=msg.text,
+                            reply_markup=reply_markup
+                        )
+                    else:
+                        # Fallback - try copy
+                        sent = await msg.copy(
+                            chat_id=user_id,
+                            caption=caption_text,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
+                        )
+
+                    if sent:
+                        print(f"✅ Message sent successfully to user {user_id}")
                         files_sent += 1
                         await increment_file_clicks(user_id)
                         if AUTO_DELETE:
                             from plugins.auto_delete import schedule_auto_delete
-                            asyncio.create_task(schedule_auto_delete(client, sent_msg, token, show_notification=False))
+                            asyncio.create_task(schedule_auto_delete(client, sent, token, show_notification=False))
                         await asyncio.sleep(0.5)
                     else:
                         files_skipped += 1
@@ -363,7 +429,7 @@ async def start_handler(client: Client, message: Message):
                     print(f"❌ Copy error: {copy_error}")
                     files_skipped += 1
                     continue
-            
+
             if files_sent > 0 and files_skipped > 0:
                 status_msg = f"✅ Sent {files_sent} file(s) successfully.\n⚠️ {files_skipped} file(s) were deleted from database channel.\n\n"
                 if AUTO_DELETE and NOTIFICATION:
@@ -378,7 +444,7 @@ async def start_handler(client: Client, message: Message):
                     f"All {files_skipped} file(s) were deleted.\n\n"
                     f"Support: @{SUPPORT_GROUP if SUPPORT_GROUP else OWNER}"
                 )
-            
+
             del ids
             return
         else:
@@ -426,5 +492,3 @@ async def listban_cmd(client: Client, message: Message):
 @Bot.on_message(filters.private & filters.command("total"))
 async def total_cmd(client: Client, message: Message):
     await total_handler(client, message)
-
-
