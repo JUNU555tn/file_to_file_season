@@ -65,9 +65,12 @@ async def channel_post(client: Client, message: Message):
                     # Delete the forwarded message from user's chat to keep it clean
                     await forwarded.delete()
                 else:
-                    # If forward failed, try direct copy to saved messages
-                    print("Forward returned None, trying direct copy to saved messages")
-                    post_message = await message.copy(chat_id="me")
+                    # If forward failed, fall back to channel storage
+                    print("Forward returned None, using channel storage instead")
+                    if hasattr(client, 'db_channel'):
+                        post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
+                    else:
+                        raise Exception("Forward failed and no channel storage available")
                 
             except Exception as e:
                 print(f"Error copying to saved messages: {e}")
