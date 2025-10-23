@@ -50,18 +50,24 @@ async def channel_post(client: Client, message: Message):
                 # This creates a bridge between bot and user client
                 forwarded = await message.forward(chat_id=client.storage_user_id)
                 
-                # Small delay to ensure message is available
-                await asyncio.sleep(0.5)
-                
-                # Now user client can copy it to saved messages
-                post_message = await client.user_client.copy_message(
-                    chat_id="me",
-                    from_chat_id=client.storage_user_id,
-                    message_id=forwarded.id
-                )
-                
-                # Delete the forwarded message from user's chat to keep it clean
-                await forwarded.delete()
+                # Check if forwarding was successful
+                if forwarded and forwarded.id:
+                    # Small delay to ensure message is available
+                    await asyncio.sleep(0.5)
+                    
+                    # Now user client can copy it to saved messages
+                    post_message = await client.user_client.copy_message(
+                        chat_id="me",
+                        from_chat_id=client.storage_user_id,
+                        message_id=forwarded.id
+                    )
+                    
+                    # Delete the forwarded message from user's chat to keep it clean
+                    await forwarded.delete()
+                else:
+                    # If forward failed, try direct copy to saved messages
+                    print("Forward returned None, trying direct copy to saved messages")
+                    post_message = await message.copy(chat_id="me")
                 
             except Exception as e:
                 print(f"Error copying to saved messages: {e}")
