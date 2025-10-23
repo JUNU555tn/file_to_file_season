@@ -45,73 +45,16 @@ async def channel_post(client: Client, message: Message):
 
         # Copy message to saved messages (user client) or DB channel
         if hasattr(client, 'user_client') and client.user_client:
-            # First, forward/copy the message from bot to user client (to a temp chat or saved messages)
-            # Then copy it to saved messages
             try:
-                # Copy message to user client's saved messages
-                # We need to download and re-upload the media since file_ids are client-specific
-                if message.video:
-                    file_path = await client.download_media(message.video.file_id)
-                    post_message = await client.user_client.send_video(
-                        chat_id="me",
-                        video=file_path,
-                        caption=message.caption,
-                        duration=message.video.duration,
-                        width=message.video.width,
-                        height=message.video.height
-                    )
-                    os.remove(file_path)
-                elif message.document:
-                    file_path = await client.download_media(message.document.file_id)
-                    post_message = await client.user_client.send_document(
-                        chat_id="me",
-                        document=file_path,
-                        caption=message.caption,
-                        file_name=message.document.file_name
-                    )
-                    os.remove(file_path)
-                elif message.photo:
-                    file_path = await client.download_media(message.photo.file_id)
-                    post_message = await client.user_client.send_photo(
-                        chat_id="me",
-                        photo=file_path,
-                        caption=message.caption
-                    )
-                    os.remove(file_path)
-                elif message.audio:
-                    file_path = await client.download_media(message.audio.file_id)
-                    post_message = await client.user_client.send_audio(
-                        chat_id="me",
-                        audio=file_path,
-                        caption=message.caption
-                    )
-                    os.remove(file_path)
-                elif message.animation:
-                    file_path = await client.download_media(message.animation.file_id)
-                    post_message = await client.user_client.send_animation(
-                        chat_id="me",
-                        animation=file_path,
-                        caption=message.caption
-                    )
-                    os.remove(file_path)
-                elif message.voice:
-                    file_path = await client.download_media(message.voice.file_id)
-                    post_message = await client.user_client.send_voice(
-                        chat_id="me",
-                        voice=file_path,
-                        caption=message.caption
-                    )
-                    os.remove(file_path)
-                elif message.text:
-                    post_message = await client.user_client.send_message(
-                        chat_id="me",
-                        text=message.text
-                    )
-                else:
-                    # Fallback to channel storage if message type is unsupported
-                    post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
+                # Forward message from admin to user client's saved messages
+                # This preserves the media without downloading/uploading
+                post_message = await client.user_client.forward_messages(
+                    chat_id="me",
+                    from_chat_id=message.chat.id,
+                    message_ids=message.id
+                )
             except Exception as e:
-                print(f"Error uploading to saved messages: {e}")
+                print(f"Error forwarding to saved messages: {e}")
                 # Fallback to channel storage on error
                 post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
         else:
