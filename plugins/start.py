@@ -355,30 +355,17 @@ async def start_handler(client: Client, message: Message):
                     print(f"📤 Attempting to send message to user {user_id}")
 
                     if hasattr(client, 'user_client') and client.user_client:
-                        # Step 1: Forward from saved messages to bot's chat
-                        bot_me = await client.get_me()
-                        temp_msg = await client.user_client.forward_messages(
-                            chat_id=bot_me.id,
-                            from_chat_id="me",
-                            message_ids=msg.id
-                        )
-                        
-                        await asyncio.sleep(0.5)
-                        
-                        # Step 2: Bot copies the message to end user
-                        sent = await client.copy_message(
+                        # User client forwards directly from saved messages to end user
+                        sent = await client.user_client.copy_message(
                             chat_id=user_id,
-                            from_chat_id=bot_me.id,
-                            message_id=temp_msg.id,
+                            from_chat_id="me",
+                            message_id=msg.id,
                             caption=caption_text if caption_text else None,
                             protect_content=PROTECT_CONTENT,
                             reply_markup=reply_markup
                         )
                         
-                        # Delete temp message from bot
-                        await client.delete_messages(bot_me.id, temp_msg.id)
-                        
-                        print(f"✅ File sent to user {user_id} via bot (from saved messages)")
+                        print(f"✅ File forwarded directly from saved messages to user {user_id}")
                     else:
                         if msg.video:
                             sent = await client.send_video(
