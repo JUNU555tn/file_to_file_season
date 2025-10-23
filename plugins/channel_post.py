@@ -36,27 +36,33 @@ async def channel_post(client: Client, message: Message):
 
         if hasattr(client, 'user_client') and client.user_client:
             try:
+                bot_me = await client.get_me()
+                bot_id = bot_me.id
+                
                 forwarded = await client.forward_messages(
                     chat_id=client.storage_user_id,
                     from_chat_id=message.chat.id,
                     message_ids=message.id
                 )
                 
+                import asyncio
+                await asyncio.sleep(0.5)
+                
                 post_message = await client.user_client.forward_messages(
                     chat_id="me",
-                    from_chat_id=client.storage_user_id,
+                    from_chat_id=bot_id,
                     message_ids=forwarded.id
                 )
                 
-                await client.delete_messages(
-                    chat_id=client.storage_user_id,
+                await client.user_client.delete_messages(
+                    chat_id=bot_id,
                     message_ids=forwarded.id
                 )
                 
-                print(f"✅ Message forwarded to saved messages using file reference (no download/upload)")
+                print(f"✅ Message saved to user's saved messages (no download/upload)")
                 
             except Exception as e:
-                print(f"Error forwarding to saved messages: {e}")
+                print(f"Error saving to saved messages: {e}")
                 if hasattr(client, 'db_channel'):
                     post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
                 else:
