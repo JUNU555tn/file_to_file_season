@@ -46,39 +46,46 @@ async def channel_post(client: Client, message: Message):
         # Copy message to saved messages (user client) or DB channel
         if hasattr(client, 'user_client') and client.user_client:
             try:
-                # Directly send the message content to saved messages using user client
-                if message.video:
+                # Download the media file
+                file_path = None
+                if message.video or message.document or message.photo or message.animation or message.audio:
+                    print("Downloading media file...")
+                    file_path = await message.download()
+                    print(f"File downloaded to: {file_path}")
+                
+                # Send the file using user client
+                if message.video and file_path:
                     post_message = await client.user_client.send_video(
                         chat_id="me",
-                        video=message.video.file_id,
+                        video=file_path,
                         caption=message.caption,
                         disable_notification=True
                     )
-                elif message.document:
+                elif message.document and file_path:
                     post_message = await client.user_client.send_document(
                         chat_id="me",
-                        document=message.document.file_id,
+                        document=file_path,
                         caption=message.caption,
                         disable_notification=True
                     )
-                elif message.photo:
+                elif message.photo and file_path:
                     post_message = await client.user_client.send_photo(
                         chat_id="me",
-                        photo=message.photo.file_id,
+                        photo=file_path,
                         caption=message.caption,
                         disable_notification=True
                     )
-                elif message.animation:
+                elif message.animation and file_path:
                     post_message = await client.user_client.send_animation(
                         chat_id="me",
-                        animation=message.animation.file_id,
+                        animation=file_path,
                         caption=message.caption,
                         disable_notification=True
                     )
-                elif message.audio:
+                elif message.audio and file_path:
                     post_message = await client.user_client.send_audio(
                         chat_id="me",
-                        audio=message.audio.file_id,
+                        audio=file_path,
                         caption=message.caption,
                         disable_notification=True
                     )
@@ -91,8 +98,16 @@ async def channel_post(client: Client, message: Message):
                 else:
                     raise Exception("Message type not supported")
                 
+                # Clean up downloaded file
+                if file_path and os.path.exists(file_path):
+                    os.remove(file_path)
+                    print("Downloaded file cleaned up")
+                
             except Exception as e:
                 print(f"Error sending to saved messages: {e}")
+                # Clean up file on error
+                if 'file_path' in locals() and file_path and os.path.exists(file_path):
+                    os.remove(file_path)
                 # Fallback to channel storage on error (if available)
                 if hasattr(client, 'db_channel'):
                     post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
