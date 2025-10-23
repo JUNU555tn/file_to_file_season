@@ -84,10 +84,14 @@ async def is_subscribed(filter, client, update):
         except Exception as e:
             error_msg = str(e)
             # Only return False if user is not a participant
-            # Skip check if channel issue (deleted, bot removed, etc.)
+            # Skip check if channel issue (deleted, bot removed, PEER_ID_INVALID, etc.)
             if "USER_NOT_PARTICIPANT" in error_msg:
                 print(f"❌ User {user_id} not subscribed to channel {channel_id}")
                 return False
+            elif "PEER_ID_INVALID" in error_msg:
+                print(f"⚠️ Invalid channel ID {channel_id} - bot may not have access. Skipping this channel.")
+                # Continue to check other channels
+                continue
             else:
                 print(f"⚠️ Skipping channel {channel_id} check due to error: {e}")
                 # Continue checking other channels instead of failing
@@ -108,10 +112,12 @@ async def get_non_joined_channels(client, user_id):
         except Exception as e:
             error_msg = str(e)
             # Only add to non_joined if it's a USER_NOT_PARTICIPANT error
-            # Skip if channel is deleted, banned, or bot was removed
+            # Skip if channel is deleted, banned, bot was removed, or PEER_ID_INVALID
             if "USER_NOT_PARTICIPANT" in error_msg:
                 non_joined.append((index, channel_id))
                 print(f"User {user_id} not in channel {channel_id}")
+            elif "PEER_ID_INVALID" in error_msg:
+                print(f"⚠️ Invalid channel ID {channel_id} - bot may not have access. Skipping.")
             else:
                 print(f"Skipping channel {channel_id} due to error: {e}")
     
