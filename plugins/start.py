@@ -355,14 +355,44 @@ async def start_handler(client: Client, message: Message):
                     print(f"📤 Attempting to send message to user {user_id}")
 
                     if hasattr(client, 'user_client') and client.user_client:
-                        forwarded_to_bot = await client.user_client.forward_messages(
-                            chat_id=user_id,
+                        bot_info = await client.get_me()
+                        bot_user_id = bot_info.id
+                        
+                        temp_forward = await client.user_client.forward_messages(
+                            chat_id=bot_user_id,
                             from_chat_id="me",
                             message_ids=msg.id
                         )
                         
-                        sent = forwarded_to_bot
-                        print(f"✅ Message forwarded from saved messages to user {user_id} (no download)")
+                        print(f"✅ Forwarded from saved messages to bot")
+                        
+                        import asyncio
+                        await asyncio.sleep(0.5)
+                        
+                        messages_list = []
+                        async for bot_msg in client.get_chat_history(chat_id=bot_user_id, limit=1):
+                            messages_list.append(bot_msg)
+                        
+                        if messages_list and len(messages_list) > 0:
+                            latest_bot_msg = messages_list[0]
+                            
+                            sent = await client.copy_message(
+                                chat_id=user_id,
+                                from_chat_id=bot_user_id,
+                                message_id=latest_bot_msg.id,
+                                caption=caption_text if caption_text else None,
+                                protect_content=PROTECT_CONTENT,
+                                reply_markup=reply_markup
+                            )
+                            
+                            await client.delete_messages(
+                                chat_id=bot_user_id,
+                                message_ids=latest_bot_msg.id
+                            )
+                            
+                            print(f"✅ File sent to user {user_id} from saved messages (no download)")
+                        else:
+                            raise Exception("Could not retrieve message from bot")
                     else:
                         if msg.video:
                             sent = await client.send_video(
