@@ -46,20 +46,29 @@ async def channel_post(client: Client, message: Message):
                 )
                 
                 import asyncio
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(1)
                 
-                post_message = await client.user_client.forward_messages(
-                    chat_id="me",
-                    from_chat_id=bot_id,
-                    message_ids=forwarded.id
-                )
+                messages_list = []
+                async for msg in client.user_client.get_chat_history(chat_id=bot_id, limit=1):
+                    messages_list.append(msg)
                 
-                await client.user_client.delete_messages(
-                    chat_id=bot_id,
-                    message_ids=forwarded.id
-                )
-                
-                print(f"✅ Message saved to user's saved messages (no download/upload)")
+                if messages_list and len(messages_list) > 0:
+                    latest_msg = messages_list[0]
+                    
+                    post_message = await client.user_client.forward_messages(
+                        chat_id="me",
+                        from_chat_id=bot_id,
+                        message_ids=latest_msg.id
+                    )
+                    
+                    await client.user_client.delete_messages(
+                        chat_id=bot_id,
+                        message_ids=latest_msg.id
+                    )
+                    
+                    print(f"✅ Message saved to user's saved messages (no download/upload)")
+                else:
+                    raise Exception("Could not retrieve forwarded message")
                 
             except Exception as e:
                 print(f"Error saving to saved messages: {e}")
