@@ -355,7 +355,7 @@ async def start_handler(client: Client, message: Message):
                     print(f"📤 Attempting to send message to user {user_id}")
 
                     if hasattr(client, 'user_client') and client.user_client:
-                        # Step 1: Forward from saved messages to bot (as temp)
+                        # Step 1: Forward from saved messages to bot's chat
                         bot_me = await client.get_me()
                         temp_msg = await client.user_client.forward_messages(
                             chat_id=bot_me.id,
@@ -363,73 +363,17 @@ async def start_handler(client: Client, message: Message):
                             message_ids=msg.id
                         )
                         
-                        await asyncio.sleep(0.3)
+                        await asyncio.sleep(0.5)
                         
-                        # Step 2: Bot sends to end user
-                        bot_msg = await client.get_messages(bot_me.id, temp_msg.id)
-                        
-                        if bot_msg.video:
-                            sent = await client.send_video(
-                                chat_id=user_id,
-                                video=bot_msg.video.file_id,
-                                caption=caption_text if caption_text else None,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
-                        elif bot_msg.document:
-                            sent = await client.send_document(
-                                chat_id=user_id,
-                                document=bot_msg.document.file_id,
-                                caption=caption_text if caption_text else None,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
-                        elif bot_msg.photo:
-                            sent = await client.send_photo(
-                                chat_id=user_id,
-                                photo=bot_msg.photo.file_id,
-                                caption=caption_text if caption_text else None,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
-                        elif bot_msg.audio:
-                            sent = await client.send_audio(
-                                chat_id=user_id,
-                                audio=bot_msg.audio.file_id,
-                                caption=caption_text if caption_text else None,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
-                        elif bot_msg.animation:
-                            sent = await client.send_animation(
-                                chat_id=user_id,
-                                animation=bot_msg.animation.file_id,
-                                caption=caption_text if caption_text else None,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
-                        elif bot_msg.voice:
-                            sent = await client.send_voice(
-                                chat_id=user_id,
-                                voice=bot_msg.voice.file_id,
-                                caption=caption_text if caption_text else None,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
-                        elif bot_msg.text:
-                            sent = await client.send_message(
-                                chat_id=user_id,
-                                text=bot_msg.text,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
-                        else:
-                            sent = await bot_msg.copy(
-                                chat_id=user_id,
-                                caption=caption_text if caption_text else None,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
+                        # Step 2: Bot copies the message to end user
+                        sent = await client.copy_message(
+                            chat_id=user_id,
+                            from_chat_id=bot_me.id,
+                            message_id=temp_msg.id,
+                            caption=caption_text if caption_text else None,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
+                        )
                         
                         # Delete temp message from bot
                         await client.delete_messages(bot_me.id, temp_msg.id)
