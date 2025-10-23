@@ -45,7 +45,6 @@ async def channel_post(client: Client, message: Message):
 
         # Copy message to saved messages (user client) or DB channel
         if hasattr(client, 'user_client') and client.user_client:
-            post_message = await message.copy(chat_id="me", disable_notification=True)
             # Forward using user client to saved messages
             post_message = await client.user_client.forward_messages(
                 chat_id="me",
