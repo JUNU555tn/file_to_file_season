@@ -45,11 +45,11 @@ async def channel_post(client: Client, message: Message):
 
         # Copy message to saved messages (user client) or DB channel
         if hasattr(client, 'user_client') and client.user_client:
-            # Forward message to user client's saved messages
-            # This works across sessions without downloading
-            post_message = await message.forward(
+            # Forward message to user client's saved messages using the user_client
+            post_message = await client.user_client.forward_messages(
                 chat_id="me",
-                client=client.user_client
+                from_chat_id=message.chat.id,
+                message_ids=message.id
             )
         else:
             # Fallback to channel storage

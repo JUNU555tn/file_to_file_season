@@ -63,7 +63,12 @@ async def batch(client: Client, message: Message):
 
     # Create secure link with token
     from helper_func import create_file_link
-    message_ids = [f_msg_id, s_msg_id]
+    # Generate range of message IDs
+    if f_msg_id <= s_msg_id:
+        message_ids = list(range(f_msg_id, s_msg_id + 1))
+    else:
+        message_ids = list(range(s_msg_id, f_msg_id + 1))
+    
     link, token = await create_file_link(client, message_ids)
     await second_message.reply_text(f"<strong>🥵 DIRECT VIDEO 📂 👇\n\n{link}\n\n⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪\nBuy vip for 🔞 direct Video  @Myhero2k\n\n©️BACKUP CHANNEL @JNK_BACKUP\n⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪</strong>", quote=True)
 

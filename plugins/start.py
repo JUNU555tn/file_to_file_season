@@ -298,7 +298,11 @@ async def start_handler(client: Client, message: Message):
                 try:
                     # Fetch from user client's saved messages if available
                     if hasattr(client, 'user_client') and client.user_client:
-                        msg = await client.user_client.get_messages("me", msg_id)
+                        # Get message from user's saved messages
+                        msg = await client.user_client.get_messages(
+                            chat_id="me",
+                            message_ids=msg_id
+                        )
                     else:
                         msg = await client.get_messages(client.db_channel.id, msg_id)
 
