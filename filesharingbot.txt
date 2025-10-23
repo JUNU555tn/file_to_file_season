@@ -4591,3 +4591,271 @@ https://t.me/ultroid_official
 [23-Oct-25 12:43:52 - INFO] - bot -   ... and 7 more users
 [23-Oct-25 12:43:52 - INFO] - bot - ==================================================
 [23-Oct-25 12:43:52 - INFO] - aiohttp.access - 172.31.92.194 [23/Oct/2025:12:43:52 +0000] "GET / HTTP/1.1" 200 177 "https://9c9ae471-a6e6-4f3d-85a2-6007f5f7433e-00-qw4vfywnaobg.pike.replit.dev:8080/__replco/workspace_iframe.html?initialPath=%2F&id=%3Ar10e%3A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+[23-Oct-25 12:44:48 - INFO] - root - Stop signal received (SIGTERM). Exiting...
+[23-Oct-25 12:44:49 - INFO] - bot - Bot stopped.
+[23-Oct-25 12:44:57 - INFO] - bot - ✅ User client started successfully: Akaza
+[23-Oct-25 12:44:57 - INFO] - bot - 📁 Files will be stored in Saved Messages
+[23-Oct-25 12:44:58 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/ultroid_official
+[23-Oct-25 12:44:58 - INFO] - bot -  
+
+       
+(っ◔◡◔)っ ♥ ULTROIDOFFICIAL ♥
+░╚════╝░░╚════╝░╚═════╝░╚══════╝
+                                          
+[23-Oct-25 12:44:58 - INFO] - bot - ==================================================
+[23-Oct-25 12:44:58 - INFO] - bot - 📊 VERIFICATION STATISTICS (Last 24 Hours)
+[23-Oct-25 12:44:58 - INFO] - bot - ==================================================
+[23-Oct-25 12:44:58 - INFO] - bot - ✅ Total Active Verified Users: 17
+[23-Oct-25 12:44:58 - INFO] - bot - 🆕 New Verifications (24h): 17
+[23-Oct-25 12:44:58 - INFO] - bot - 
+🔔 Recent Verifications:
+[23-Oct-25 12:44:58 - INFO] - bot -   1. 👤 Yashu (No username)
+     🆔 ID: 5438483376
+     ⏰ Verified: 2025-10-23 08:12:23
+     ⏳ Expires in: 19h 27m
+[23-Oct-25 12:44:58 - INFO] - bot -   2. 👤 Bharat (@Bharat6362056517)
+     🆔 ID: 1057540917
+     ⏰ Verified: 2025-10-23 06:59:09
+     ⏳ Expires in: 18h 14m
+[23-Oct-25 12:44:58 - INFO] - bot -   3. 👤 Vishnu Sree (No username)
+     🆔 ID: 665288908
+     ⏰ Verified: 2025-10-23 04:41:05
+     ⏳ Expires in: 15h 56m
+[23-Oct-25 12:44:59 - INFO] - bot -   4. 👤 Jon (No username)
+     🆔 ID: 8047242841
+     ⏰ Verified: 2025-10-23 02:41:54
+     ⏳ Expires in: 13h 56m
+[23-Oct-25 12:44:59 - INFO] - bot -   5. 👤 Bakita (No username)
+     🆔 ID: 7234598096
+     ⏰ Verified: 2025-10-23 01:44:13
+     ⏳ Expires in: 12h 59m
+[23-Oct-25 12:44:59 - INFO] - bot -   6. 👤 Sharad (No username)
+     🆔 ID: 808486818
+     ⏰ Verified: 2025-10-23 01:27:25
+     ⏳ Expires in: 12h 42m
+[23-Oct-25 12:44:59 - INFO] - bot -   7. 👤 Karan (No username)
+     🆔 ID: 7598460224
+     ⏰ Verified: 2025-10-22 20:58:06
+     ⏳ Expires in: 8h 13m
+[23-Oct-25 12:44:59 - INFO] - bot -   8. 👤 JP (@Jayaprakash777)
+     🆔 ID: 5093196112
+     ⏰ Verified: 2025-10-22 18:44:42
+     ⏳ Expires in: 5h 59m
+[23-Oct-25 12:44:59 - INFO] - bot -   9. 👤 Irfan (No username)
+     🆔 ID: 898804840
+     ⏰ Verified: 2025-10-22 18:41:35
+     ⏳ Expires in: 5h 56m
+[23-Oct-25 12:44:59 - INFO] - bot -   10. 👤 Konan (No username)
+     🆔 ID: 8145840172
+     ⏰ Verified: 2025-10-22 18:10:17
+     ⏳ Expires in: 5h 25m
+[23-Oct-25 12:44:59 - INFO] - bot -   ... and 7 more users
+[23-Oct-25 12:44:59 - INFO] - bot - ==================================================
+[23-Oct-25 12:45:00 - INFO] - aiohttp.access - 172.31.92.194 [23/Oct/2025:12:45:00 +0000] "GET / HTTP/1.1" 200 177 "https://9c9ae471-a6e6-4f3d-85a2-6007f5f7433e-00-qw4vfywnaobg.pike.replit.dev:8080/__replco/workspace_iframe.html?initialPath=%2F&id=%3Ar12t%3A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+[23-Oct-25 12:45:18 - INFO] - root - Stop signal received (SIGTERM). Exiting...
+[23-Oct-25 12:54:18 - INFO] - bot - ✅ User client started successfully: Akaza
+[23-Oct-25 12:54:18 - INFO] - bot - 📁 Files will be stored in Saved Messages
+[23-Oct-25 12:54:19 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/ultroid_official
+[23-Oct-25 12:54:19 - INFO] - bot -  
+
+       
+(っ◔◡◔)っ ♥ ULTROIDOFFICIAL ♥
+░╚════╝░░╚════╝░╚═════╝░╚══════╝
+                                          
+[23-Oct-25 12:54:19 - INFO] - bot - ==================================================
+[23-Oct-25 12:54:19 - INFO] - bot - 📊 VERIFICATION STATISTICS (Last 24 Hours)
+[23-Oct-25 12:54:19 - INFO] - bot - ==================================================
+[23-Oct-25 12:54:19 - INFO] - bot - ✅ Total Active Verified Users: 17
+[23-Oct-25 12:54:19 - INFO] - bot - 🆕 New Verifications (24h): 17
+[23-Oct-25 12:54:19 - INFO] - bot - 
+🔔 Recent Verifications:
+[23-Oct-25 12:54:19 - INFO] - bot -   1. 👤 Yashu (No username)
+     🆔 ID: 5438483376
+     ⏰ Verified: 2025-10-23 08:12:23
+     ⏳ Expires in: 19h 18m
+[23-Oct-25 12:54:19 - INFO] - bot -   2. 👤 Bharat (@Bharat6362056517)
+     🆔 ID: 1057540917
+     ⏰ Verified: 2025-10-23 06:59:09
+     ⏳ Expires in: 18h 4m
+[23-Oct-25 12:54:20 - INFO] - bot -   3. 👤 Vishnu Sree (No username)
+     🆔 ID: 665288908
+     ⏰ Verified: 2025-10-23 04:41:05
+     ⏳ Expires in: 15h 46m
+[23-Oct-25 12:54:20 - INFO] - bot -   4. 👤 Jon (No username)
+     🆔 ID: 8047242841
+     ⏰ Verified: 2025-10-23 02:41:54
+     ⏳ Expires in: 13h 47m
+[23-Oct-25 12:54:20 - INFO] - bot -   5. 👤 Bakita (No username)
+     🆔 ID: 7234598096
+     ⏰ Verified: 2025-10-23 01:44:13
+     ⏳ Expires in: 12h 49m
+[23-Oct-25 12:54:20 - INFO] - bot -   6. 👤 Sharad (No username)
+     🆔 ID: 808486818
+     ⏰ Verified: 2025-10-23 01:27:25
+     ⏳ Expires in: 12h 33m
+[23-Oct-25 12:54:20 - INFO] - bot -   7. 👤 Karan (No username)
+     🆔 ID: 7598460224
+     ⏰ Verified: 2025-10-22 20:58:06
+     ⏳ Expires in: 8h 3m
+[23-Oct-25 12:54:20 - INFO] - bot -   8. 👤 JP (@Jayaprakash777)
+     🆔 ID: 5093196112
+     ⏰ Verified: 2025-10-22 18:44:42
+     ⏳ Expires in: 5h 50m
+[23-Oct-25 12:54:20 - INFO] - bot -   9. 👤 Irfan (No username)
+     🆔 ID: 898804840
+     ⏰ Verified: 2025-10-22 18:41:35
+     ⏳ Expires in: 5h 47m
+[23-Oct-25 12:54:20 - INFO] - bot -   10. 👤 Konan (No username)
+     🆔 ID: 8145840172
+     ⏰ Verified: 2025-10-22 18:10:17
+     ⏳ Expires in: 5h 15m
+[23-Oct-25 12:54:20 - INFO] - bot -   ... and 7 more users
+[23-Oct-25 12:54:20 - INFO] - bot - ==================================================
+[23-Oct-25 12:54:21 - INFO] - aiohttp.access - 172.31.92.194 [23/Oct/2025:12:54:21 +0000] "GET / HTTP/1.1" 200 177 "https://9c9ae471-a6e6-4f3d-85a2-6007f5f7433e-00-qw4vfywnaobg.pike.replit.dev:8080/__replco/workspace_iframe.html?initialPath=%2F&id=%3Ar13u%3A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+[23-Oct-25 12:55:00 - INFO] - root - Stop signal received (SIGTERM). Exiting...
+[23-Oct-25 12:55:09 - INFO] - bot - ✅ User client started successfully: Akaza
+[23-Oct-25 12:55:09 - INFO] - bot - 📁 Files will be stored in Saved Messages
+[23-Oct-25 12:55:10 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/ultroid_official
+[23-Oct-25 12:55:10 - INFO] - bot -  
+
+       
+(っ◔◡◔)っ ♥ ULTROIDOFFICIAL ♥
+░╚════╝░░╚════╝░╚═════╝░╚══════╝
+                                          
+[23-Oct-25 12:55:10 - INFO] - bot - ==================================================
+[23-Oct-25 12:55:10 - INFO] - bot - 📊 VERIFICATION STATISTICS (Last 24 Hours)
+[23-Oct-25 12:55:10 - INFO] - bot - ==================================================
+[23-Oct-25 12:55:10 - INFO] - bot - ✅ Total Active Verified Users: 17
+[23-Oct-25 12:55:10 - INFO] - bot - 🆕 New Verifications (24h): 17
+[23-Oct-25 12:55:10 - INFO] - bot - 
+🔔 Recent Verifications:
+[23-Oct-25 12:55:10 - INFO] - bot -   1. 👤 Yashu (No username)
+     🆔 ID: 5438483376
+     ⏰ Verified: 2025-10-23 08:12:23
+     ⏳ Expires in: 19h 17m
+[23-Oct-25 12:55:10 - INFO] - bot -   2. 👤 Bharat (@Bharat6362056517)
+     🆔 ID: 1057540917
+     ⏰ Verified: 2025-10-23 06:59:09
+     ⏳ Expires in: 18h 3m
+[23-Oct-25 12:55:10 - INFO] - bot -   3. 👤 Vishnu Sree (No username)
+     🆔 ID: 665288908
+     ⏰ Verified: 2025-10-23 04:41:05
+     ⏳ Expires in: 15h 45m
+[23-Oct-25 12:55:11 - INFO] - bot -   4. 👤 Jon (No username)
+     🆔 ID: 8047242841
+     ⏰ Verified: 2025-10-23 02:41:54
+     ⏳ Expires in: 13h 46m
+[23-Oct-25 12:55:11 - INFO] - bot -   5. 👤 Bakita (No username)
+     🆔 ID: 7234598096
+     ⏰ Verified: 2025-10-23 01:44:13
+     ⏳ Expires in: 12h 49m
+[23-Oct-25 12:55:11 - INFO] - bot -   6. 👤 Sharad (No username)
+     🆔 ID: 808486818
+     ⏰ Verified: 2025-10-23 01:27:25
+     ⏳ Expires in: 12h 32m
+[23-Oct-25 12:55:11 - INFO] - bot -   7. 👤 Karan (No username)
+     🆔 ID: 7598460224
+     ⏰ Verified: 2025-10-22 20:58:06
+     ⏳ Expires in: 8h 2m
+[23-Oct-25 12:55:11 - INFO] - bot -   8. 👤 JP (@Jayaprakash777)
+     🆔 ID: 5093196112
+     ⏰ Verified: 2025-10-22 18:44:42
+     ⏳ Expires in: 5h 49m
+[23-Oct-25 12:55:11 - INFO] - bot -   9. 👤 Irfan (No username)
+     🆔 ID: 898804840
+     ⏰ Verified: 2025-10-22 18:41:35
+     ⏳ Expires in: 5h 46m
+[23-Oct-25 12:55:11 - INFO] - bot -   10. 👤 Konan (No username)
+     🆔 ID: 8145840172
+     ⏰ Verified: 2025-10-22 18:10:17
+     ⏳ Expires in: 5h 15m
+[23-Oct-25 12:55:11 - INFO] - bot -   ... and 7 more users
+[23-Oct-25 12:55:11 - INFO] - bot - ==================================================
+[23-Oct-25 12:55:11 - INFO] - aiohttp.access - 172.31.92.194 [23/Oct/2025:12:55:11 +0000] "GET / HTTP/1.1" 200 177 "https://9c9ae471-a6e6-4f3d-85a2-6007f5f7433e-00-qw4vfywnaobg.pike.replit.dev:8080/__replco/workspace_iframe.html?initialPath=%2F&id=%3Ar14m%3A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+[23-Oct-25 12:55:13 - INFO] - aiohttp.access - 127.0.0.1 [23/Oct/2025:12:55:13 +0000] "GET / HTTP/1.1" 200 177 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+[23-Oct-25 12:55:19 - INFO] - aiohttp.access - 127.0.0.1 [23/Oct/2025:12:55:19 +0000] "GET /favicon.ico HTTP/1.1" 404 174 "http://127.0.0.1:8080/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+[23-Oct-25 12:56:14 - INFO] - root - Stop signal received (SIGTERM). Exiting...
+[23-Oct-25 12:56:15 - ERROR] - asyncio - Task exception was never retrieved
+future: <Task finished name='Task-164' coro=<Client.handle_updates() done, defined at /home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/pyrogram/client.py:535> exception=ProgrammingError('Cannot operate on a closed database.')>
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/pyrogram/client.py", line 540, in handle_updates
+    await self.fetch_peers(updates.users),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/pyrogram/client.py", line 531, in fetch_peers
+    await self.storage.update_peers(parsed_peers)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/pyrogram/storage/sqlite_storage.py", line 129, in update_peers
+    self.conn.executemany(
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+[23-Oct-25 12:56:15 - INFO] - bot - Bot stopped.
+[23-Oct-25 12:56:22 - INFO] - bot - ✅ User client started successfully: Akaza
+[23-Oct-25 12:56:22 - INFO] - bot - 📁 Files will be stored in Saved Messages
+[23-Oct-25 12:56:22 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/ultroid_official
+[23-Oct-25 12:56:22 - INFO] - bot -  
+
+       
+(っ◔◡◔)っ ♥ ULTROIDOFFICIAL ♥
+░╚════╝░░╚════╝░╚═════╝░╚══════╝
+                                          
+[23-Oct-25 12:56:23 - INFO] - bot - ==================================================
+[23-Oct-25 12:56:23 - INFO] - bot - 📊 VERIFICATION STATISTICS (Last 24 Hours)
+[23-Oct-25 12:56:23 - INFO] - bot - ==================================================
+[23-Oct-25 12:56:23 - INFO] - bot - ✅ Total Active Verified Users: 17
+[23-Oct-25 12:56:23 - INFO] - bot - 🆕 New Verifications (24h): 17
+[23-Oct-25 12:56:23 - INFO] - bot - 
+🔔 Recent Verifications:
+[23-Oct-25 12:56:23 - INFO] - bot -   1. 👤 Yashu (No username)
+     🆔 ID: 5438483376
+     ⏰ Verified: 2025-10-23 08:12:23
+     ⏳ Expires in: 19h 16m
+[23-Oct-25 12:56:23 - INFO] - bot -   2. 👤 Bharat (@Bharat6362056517)
+     🆔 ID: 1057540917
+     ⏰ Verified: 2025-10-23 06:59:09
+     ⏳ Expires in: 18h 2m
+[23-Oct-25 12:56:23 - INFO] - bot -   3. 👤 Vishnu Sree (No username)
+     🆔 ID: 665288908
+     ⏰ Verified: 2025-10-23 04:41:05
+     ⏳ Expires in: 15h 44m
+[23-Oct-25 12:56:23 - INFO] - bot -   4. 👤 Jon (No username)
+     🆔 ID: 8047242841
+     ⏰ Verified: 2025-10-23 02:41:54
+     ⏳ Expires in: 13h 45m
+[23-Oct-25 12:56:23 - INFO] - bot -   5. 👤 Bakita (No username)
+     🆔 ID: 7234598096
+     ⏰ Verified: 2025-10-23 01:44:13
+     ⏳ Expires in: 12h 47m
+[23-Oct-25 12:56:23 - INFO] - bot -   6. 👤 Sharad (No username)
+     🆔 ID: 808486818
+     ⏰ Verified: 2025-10-23 01:27:25
+     ⏳ Expires in: 12h 31m
+[23-Oct-25 12:56:23 - INFO] - bot -   7. 👤 Karan (No username)
+     🆔 ID: 7598460224
+     ⏰ Verified: 2025-10-22 20:58:06
+     ⏳ Expires in: 8h 1m
+[23-Oct-25 12:56:23 - INFO] - bot -   8. 👤 JP (@Jayaprakash777)
+     🆔 ID: 5093196112
+     ⏰ Verified: 2025-10-22 18:44:42
+     ⏳ Expires in: 5h 48m
+[23-Oct-25 12:56:23 - INFO] - bot -   9. 👤 Irfan (No username)
+     🆔 ID: 898804840
+     ⏰ Verified: 2025-10-22 18:41:35
+     ⏳ Expires in: 5h 45m
+[23-Oct-25 12:56:23 - INFO] - bot -   10. 👤 Konan (No username)
+     🆔 ID: 8145840172
+     ⏰ Verified: 2025-10-22 18:10:17
+     ⏳ Expires in: 5h 13m
+[23-Oct-25 12:56:23 - INFO] - bot -   ... and 7 more users
+[23-Oct-25 12:56:23 - INFO] - bot - ==================================================
+[23-Oct-25 12:58:05 - INFO] - root - Stop signal received (SIGTERM). Exiting...
+[23-Oct-25 12:58:06 - INFO] - bot - Bot stopped.
