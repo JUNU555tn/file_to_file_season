@@ -45,63 +45,81 @@ async def channel_post(client: Client, message: Message):
 
         # Copy message to saved messages (user client) or DB channel
         if hasattr(client, 'user_client') and client.user_client:
-            # First copy message to a temporary location accessible by both clients
-            # Then copy it to saved messages using user client
-            if message.video:
-                post_message = await client.user_client.send_video(
-                    chat_id="me",
-                    video=message.video.file_id,
-                    caption=message.caption,
-                    caption_entities=message.caption_entities,
-                    duration=message.video.duration,
-                    width=message.video.width,
-                    height=message.video.height,
-                    supports_streaming=message.video.supports_streaming
-                )
-            elif message.document:
-                post_message = await client.user_client.send_document(
-                    chat_id="me",
-                    document=message.document.file_id,
-                    caption=message.caption,
-                    caption_entities=message.caption_entities
-                )
-            elif message.photo:
-                post_message = await client.user_client.send_photo(
-                    chat_id="me",
-                    photo=message.photo.file_id,
-                    caption=message.caption,
-                    caption_entities=message.caption_entities
-                )
-            elif message.audio:
-                post_message = await client.user_client.send_audio(
-                    chat_id="me",
-                    audio=message.audio.file_id,
-                    caption=message.caption,
-                    caption_entities=message.caption_entities
-                )
-            elif message.animation:
-                post_message = await client.user_client.send_animation(
-                    chat_id="me",
-                    animation=message.animation.file_id,
-                    caption=message.caption,
-                    caption_entities=message.caption_entities
-                )
-            elif message.voice:
-                post_message = await client.user_client.send_voice(
-                    chat_id="me",
-                    voice=message.voice.file_id,
-                    caption=message.caption,
-                    caption_entities=message.caption_entities
-                )
-            elif message.text:
-                post_message = await client.user_client.send_message(
-                    chat_id="me",
-                    text=message.text,
-                    entities=message.entities
-                )
-            else:
-                # Fallback - copy as is
-                raise Exception("Unsupported message type")
+            # Download and re-upload media to saved messages
+            import os
+            file_path = None
+            
+            try:
+                if message.video or message.document or message.photo or message.audio or message.animation or message.voice:
+                    # Download the file first
+                    file_path = await message.download(file_name="downloads/")
+                    
+                    if message.video:
+                        post_message = await client.user_client.send_video(
+                            chat_id="me",
+                            video=file_path,
+                            caption=message.caption,
+                            caption_entities=message.caption_entities,
+                            duration=message.video.duration,
+                            width=message.video.width,
+                            height=message.video.height,
+                            supports_streaming=message.video.supports_streaming
+                        )
+                    elif message.document:
+                        post_message = await client.user_client.send_document(
+                            chat_id="me",
+                            document=file_path,
+                            caption=message.caption,
+                            caption_entities=message.caption_entities
+                        )
+                    elif message.photo:
+                        post_message = await client.user_client.send_photo(
+                            chat_id="me",
+                            photo=file_path,
+                            caption=message.caption,
+                            caption_entities=message.caption_entities
+                        )
+                    elif message.audio:
+                        post_message = await client.user_client.send_audio(
+                            chat_id="me",
+                            audio=file_path,
+                            caption=message.caption,
+                            caption_entities=message.caption_entities
+                        )
+                    elif message.animation:
+                        post_message = await client.user_client.send_animation(
+                            chat_id="me",
+                            animation=file_path,
+                            caption=message.caption,
+                            caption_entities=message.caption_entities
+                        )
+                    elif message.voice:
+                        post_message = await client.user_client.send_voice(
+                            chat_id="me",
+                            voice=file_path,
+                            caption=message.caption,
+                            caption_entities=message.caption_entities
+                        )
+                    
+                    # Delete the downloaded file after uploading
+                    if file_path and os.path.exists(file_path):
+                        os.remove(file_path)
+                        
+                elif message.text:
+                    post_message = await client.user_client.send_message(
+                        chat_id="me",
+                        text=message.text,
+                        entities=message.entities
+                    )
+                else:
+                    # Fallback - copy as is
+                    raise Exception("Unsupported message type")
+                    
+            except Exception as e:
+                # Clean up downloaded file on error
+                if file_path and os.path.exists(file_path):
+                    os.remove(file_path)
+                raise e
         else:
             # Fallback to channel storage
             post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
