@@ -293,7 +293,12 @@ async def start_handler(client: Client, message: Message):
                 if msg_id is None: 
                     continue
                 try:
-                    msg = await client.get_messages(chat_id=client.db_channel.id, message_ids=msg_id)
+                    # Try to get from saved messages first (user client)
+                    if hasattr(client, 'user_client') and client.user_client:
+                        msg = await client.user_client.get_messages(chat_id="me", message_ids=msg_id)
+                    else:
+                        # Fallback to channel storage
+                        msg = await client.get_messages(chat_id=client.db_channel.id, message_ids=msg_id)
                     print(f"📥 Retrieved message for user {user_id}, msg_id: {msg_id}, msg exists: {msg is not None}, empty: {msg.empty if msg else 'N/A'}")
 
                 except ChannelBanned:

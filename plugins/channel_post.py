@@ -43,8 +43,18 @@ async def channel_post(client: Client, message: Message):
         # Use the new secure token system
         from helper_func import create_file_link
 
-        # Copy message to DB channel first
-        post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
+        # Copy message to saved messages (user client) or DB channel
+        if hasattr(client, 'user_client') and client.user_client:
+            post_message = await message.copy(chat_id="me", disable_notification=True)
+            # Forward using user client to saved messages
+            post_message = await client.user_client.forward_messages(
+                chat_id="me",
+                from_chat_id=message.chat.id,
+                message_ids=message.id
+            )
+        else:
+            # Fallback to channel storage
+            post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
 
         # Generate secure link with token
         link, token = await create_file_link(client, post_message.id)

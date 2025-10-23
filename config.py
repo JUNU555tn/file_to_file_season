@@ -9,7 +9,10 @@ TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 APP_ID = int(os.environ.get("APP_ID", "21"))
 API_HASH = os.environ.get("API_HASH", "c877fc81e")
 
-# Your db channel Id
+# User session string for storing files in saved messages
+USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING", "")
+
+# Your db channel Id (deprecated - now using saved messages)
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1565"))
 
 # OWNER ID

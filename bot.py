@@ -8,7 +8,7 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNELS, CHANNEL_ID, PORT
+from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNELS, CHANNEL_ID, PORT, USER_SESSION_STRING
 import pyrogram.utils
 
 pyrogram.utils.MIN_CHAT_ID = -999999999999
@@ -27,6 +27,7 @@ class Bot(Client):
             bot_token=TG_BOT_TOKEN
         )
         self.LOGGER = LOGGER
+        self.user_client = None
 
     async def start(self):
         await super().start()
@@ -48,17 +49,46 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNELS value and Make sure Bot is Admin in all channels with Invite Users via Link Permission, Current Force Sub Channels: {FORCE_SUB_CHANNELS}")
                 self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/ultroid_official for support")
                 sys.exit()
-        try:
-            db_channel = await self.get_chat(CHANNEL_ID)
-            self.db_channel = db_channel
-            test = await self.send_message(chat_id=db_channel.id, text="Test Message")
-            await test.delete()
-        except Exception as e:
-            self.LOGGER(__name__).warning(f"Error occurred: {e}")
-            self.LOGGER(__name__).warning(f"CHANNEL_ID: {CHANNEL_ID}, DB Channel ID: {db_channel.id if 'db_channel' in locals() else 'N/A'}")
-            self.LOGGER(__name__).warning(f"Make sure bot is Admin in DB Channel, and Double-check the CHANNEL_ID value.")
-            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/ultroid_official for support")
-            sys.exit()
+        
+        # Initialize user client for saved messages storage
+        if USER_SESSION_STRING:
+            try:
+                self.user_client = Client(
+                    name="UserBot",
+                    api_hash=API_HASH,
+                    api_id=APP_ID,
+                    session_string=USER_SESSION_STRING
+                )
+                await self.user_client.start()
+                user_me = await self.user_client.get_me()
+                self.storage_user_id = user_me.id
+                self.LOGGER(__name__).info(f"✅ User client started successfully: {user_me.first_name}")
+                self.LOGGER(__name__).info("📁 Files will be stored in Saved Messages")
+                
+                # Test saved messages access
+                test = await self.user_client.send_message("me", "✅ File Storage System Active")
+                await test.delete()
+                
+            except Exception as e:
+                self.LOGGER(__name__).warning(f"❌ Failed to start user client: {e}")
+                self.LOGGER(__name__).warning("Please check your USER_SESSION_STRING")
+                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/ultroid_official for support")
+                sys.exit()
+        else:
+            # Fallback to channel storage if no session string
+            try:
+                db_channel = await self.get_chat(CHANNEL_ID)
+                self.db_channel = db_channel
+                test = await self.send_message(chat_id=db_channel.id, text="Test Message")
+                await test.delete()
+                self.LOGGER(__name__).warning("⚠️ Using channel storage (legacy mode)")
+                self.LOGGER(__name__).warning("Add USER_SESSION_STRING to use saved messages storage")
+            except Exception as e:
+                self.LOGGER(__name__).warning(f"Error occurred: {e}")
+                self.LOGGER(__name__).warning(f"CHANNEL_ID: {CHANNEL_ID}, DB Channel ID: {db_channel.id if 'db_channel' in locals() else 'N/A'}")
+                self.LOGGER(__name__).warning(f"Make sure bot is Admin in DB Channel, and Double-check the CHANNEL_ID value.")
+                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/ultroid_official for support")
+                sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
         self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/ultroid_official")
@@ -136,5 +166,7 @@ class Bot(Client):
         await web.TCPSite(app, bind_address, PORT).start()
 
     async def stop(self, *args):
+        if self.user_client:
+            await self.user_client.stop()
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
