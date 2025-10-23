@@ -403,6 +403,7 @@ async def start_handler(client: Client, message: Message):
                         sent = await client.send_message(
                             chat_id=user_id,
                             text=msg.text,
+                            protect_content=PROTECT_CONTENT,
                             reply_markup=reply_markup
                         )
                     else:
