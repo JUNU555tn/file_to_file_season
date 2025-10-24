@@ -355,38 +355,22 @@ async def start_handler(client: Client, message: Message):
                     print(f"📤 Attempting to send file to user {user_id} (who clicked the link)")
 
                     if hasattr(client, 'user_client') and client.user_client:
-                        # Step 1: User client copies file from saved messages to bot's chat
-                        bot_me = await client.get_me()
-                        print(f"📋 Copying from string session user's saved messages to bot")
-                        temp_msg = await client.user_client.copy_message(
-                            chat_id=bot_me.id,
-                            from_chat_id="me",
-                            message_id=msg.id
+                        # Direct copy from string session user's saved messages to end user
+                        print(f"📋 Directly sending from string session user's saved messages to user {user_id}")
+                        
+                        sent = await client.user_client.copy_message(
+                            chat_id=user_id,  # Send directly to the user who clicked the link
+                            from_chat_id="me",  # From string session user's saved messages
+                            message_id=msg.id,
+                            caption=caption_text if caption_text else None,
+                            protect_content=PROTECT_CONTENT,
+                            reply_markup=reply_markup
                         )
                         
-                        await asyncio.sleep(0.5)
-                        
-                        # Step 2: Bot sends to the END USER (who clicked the link)
-                        if temp_msg:
-                            print(f"✅ Now sending to end user {user_id}")
-                            sent = await client.copy_message(
-                                chat_id=user_id,  # This is the user who clicked the link
-                                from_chat_id=bot_me.id,
-                                message_id=temp_msg.id,
-                                caption=caption_text if caption_text else None,
-                                protect_content=PROTECT_CONTENT,
-                                reply_markup=reply_markup
-                            )
-                            
-                            # Delete temp message from bot chat
-                            try:
-                                await client.delete_messages(bot_me.id, temp_msg.id)
-                            except:
-                                pass
-                            
-                            print(f"✅ File successfully sent to user {user_id} (link clicker)")
+                        if sent:
+                            print(f"✅ File sent directly from string session user to user {user_id}")
                         else:
-                            print(f"❌ Failed to copy message from string session user")
+                            print(f"❌ Failed to send message from string session user")
                             sent = None
                     else:
                         if msg.video:
