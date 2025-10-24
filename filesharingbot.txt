@@ -5790,3 +5790,39 @@ https://t.me/ultroid_official
      ⏳ Expires in: 0h 6m
 [24-Oct-25 04:35:06 - INFO] - bot - ==================================================
 [24-Oct-25 04:35:08 - INFO] - aiohttp.access - 172.31.84.34 [24/Oct/2025:04:35:08 +0000] "GET / HTTP/1.1" 200 177 "https://46657dcf-e3a7-4dba-ac67-635860c8ed87-00-2uw9jvph34feb.kirk.replit.dev:8080/__replco/workspace_iframe.html?initialPath=%2F&id=%3Arqv%3A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+[24-Oct-25 04:38:27 - INFO] - root - Stop signal received (SIGTERM). Exiting...
+[24-Oct-25 04:38:27 - INFO] - root - Stop signal received (SIGTERM). Exiting...
+[24-Oct-25 04:38:28 - INFO] - bot - Bot stopped.
+[24-Oct-25 04:38:35 - INFO] - bot - ✅ User client started successfully: Akaza
+[24-Oct-25 04:38:35 - INFO] - bot - 📁 Files will be stored in Saved Messages
+[24-Oct-25 04:38:36 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/ultroid_official
+[24-Oct-25 04:38:36 - INFO] - bot -  
+
+       
+(っ◔◡◔)っ ♥ ULTROIDOFFICIAL ♥
+░╚════╝░░╚════╝░╚═════╝░╚══════╝
+                                          
+[24-Oct-25 04:38:38 - INFO] - bot - ==================================================
+[24-Oct-25 04:38:38 - INFO] - bot - 📊 VERIFICATION STATISTICS (Last 24 Hours)
+[24-Oct-25 04:38:38 - INFO] - bot - ==================================================
+[24-Oct-25 04:38:38 - INFO] - bot - ✅ Total Active Verified Users: 3
+[24-Oct-25 04:38:38 - INFO] - bot - 🆕 New Verifications (24h): 3
+[24-Oct-25 04:38:38 - INFO] - bot - 
+🔔 Recent Verifications:
+[24-Oct-25 04:38:39 - INFO] - bot -   1. 👤 Yashu (No username)
+     🆔 ID: 5438483376
+     ⏰ Verified: 2025-10-23 08:12:23
+     ⏳ Expires in: 3h 33m
+[24-Oct-25 04:38:39 - INFO] - bot -   2. 👤 Bharat (@Bharat6362056517)
+     🆔 ID: 1057540917
+     ⏰ Verified: 2025-10-23 06:59:09
+     ⏳ Expires in: 2h 20m
+[24-Oct-25 04:38:39 - INFO] - bot -   3. 👤 Vishnu Sree (No username)
+     🆔 ID: 665288908
+     ⏰ Verified: 2025-10-23 04:41:05
+     ⏳ Expires in: 0h 2m
+[24-Oct-25 04:38:39 - INFO] - bot - ==================================================
+[24-Oct-25 04:38:40 - INFO] - aiohttp.access - 172.31.84.34 [24/Oct/2025:04:38:40 +0000] "GET / HTTP/1.1" 200 177 "https://46657dcf-e3a7-4dba-ac67-635860c8ed87-00-2uw9jvph34feb.kirk.replit.dev:8080/__replco/workspace_iframe.html?initialPath=%2F&id=%3Arsb%3A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
