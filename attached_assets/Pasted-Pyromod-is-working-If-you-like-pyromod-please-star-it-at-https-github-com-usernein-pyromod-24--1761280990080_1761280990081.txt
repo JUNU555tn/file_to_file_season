@@ -1,0 +1,96 @@
+Pyromod is working! If you like pyromod, please star it at https://github.com/usernein/pyromod
+[24-Oct-25 04:41:38 - INFO] - bot - ✅ User client started successfully: Akaza
+[24-Oct-25 04:41:38 - INFO] - bot - 📁 Files will be stored in Saved Messages
+[24-Oct-25 04:41:38 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/ultroid_official
+[24-Oct-25 04:41:38 - INFO] - bot -  
+
+       
+(っ◔◡◔)っ ♥ ULTROIDOFFICIAL ♥
+░╚════╝░░╚════╝░╚═════╝░╚══════╝
+                                          
+[24-Oct-25 04:41:41 - INFO] - bot - ==================================================
+[24-Oct-25 04:41:41 - INFO] - bot - 📊 VERIFICATION STATISTICS (Last 24 Hours)
+[24-Oct-25 04:41:41 - INFO] - bot - ==================================================
+[24-Oct-25 04:41:41 - INFO] - bot - ✅ Total Active Verified Users: 2
+[24-Oct-25 04:41:41 - INFO] - bot - 🆕 New Verifications (24h): 2
+[24-Oct-25 04:41:41 - INFO] - bot - 
+🔔 Recent Verifications:
+[24-Oct-25 04:41:41 - INFO] - bot -   1. 👤 Yashu (No username)
+     🆔 ID: 5438483376
+     ⏰ Verified: 2025-10-23 08:12:23
+     ⏳ Expires in: 3h 30m
+[24-Oct-25 04:41:41 - INFO] - bot -   2. 👤 Bharat (@Bharat6362056517)
+     🆔 ID: 1057540917
+     ⏰ Verified: 2025-10-23 06:59:09
+     ⏳ Expires in: 2h 17m
+[24-Oct-25 04:41:41 - INFO] - bot - ==================================================
+[24-Oct-25 04:41:42 - INFO] - aiohttp.access - 172.31.84.34 [24/Oct/2025:04:41:42 +0000] "GET / HTTP/1.1" 200 177 "https://46657dcf-e3a7-4dba-ac67-635860c8ed87-00-2uw9jvph34feb.kirk.replit.dev:8080/__replco/workspace_iframe.html?initialPath=%2F&id=%3Artq%3A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+✅ Message saved to user's saved messages (no download/upload)
+✅ User 7623389594 status in channel -1001764441595: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002903033591: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003011512366: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001910410959: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002071799763: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001848686433: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002756209221: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003190134411: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003087757291: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003091498384: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 is subscribed to all channels
+📥 Retrieved message for user 7623389594, msg_id: 309
+📤 Attempting to send file to user 7623389594 (who clicked the link)
+📋 Sending file via bot from string session user's saved messages
+✅ Bot sent file to user 7623389594 from saved messages
+✅ Message sent successfully to user 7623389594
+✅ Message saved to user's saved messages (no download/upload)
+✅ User 7623389594 status in channel -1001764441595: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002903033591: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003011512366: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001910410959: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002071799763: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001848686433: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002756209221: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003190134411: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003087757291: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003091498384: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 is subscribed to all channels
+📥 Retrieved message for user 7623389594, msg_id: 311
+📤 Attempting to send file to user 7623389594 (who clicked the link)
+📋 Sending file via bot from string session user's saved messages
+❌ Copy error: Telegram says: [400 MEDIA_EMPTY] - The media you tried to send is invalid (caused by "messages.SendMedia")
+✅ Message saved to user's saved messages (no download/upload)
+✅ User 7623389594 status in channel -1001764441595: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002903033591: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003011512366: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001910410959: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002071799763: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001848686433: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002756209221: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003190134411: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003087757291: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003091498384: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 is subscribed to all channels
+📥 Retrieved message for user 7623389594, msg_id: 313
+📤 Attempting to send file to user 7623389594 (who clicked the link)
+📋 Sending file via bot from string session user's saved messages
+✅ Bot sent file to user 7623389594 from saved messages
+✅ Message sent successfully to user 7623389594
+✅ Message saved to user's saved messages (no download/upload)
+✅ User 7623389594 status in channel -1001764441595: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002903033591: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003011512366: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001910410959: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002071799763: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001848686433: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002756209221: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003190134411: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003087757291: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003091498384: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 is subscribed to all channels
+📥 Retrieved message for user 7623389594, msg_id: 315
+📤 Attempting to send file to user 7623389594 (who clicked the link)
+📋 Sending file via bot from string session user's saved messages
+❌ Copy error: Telegram says: [400 MEDIA_EMPTY] - The media you tried to send is invalid (caused by "messages.SendMedia")
