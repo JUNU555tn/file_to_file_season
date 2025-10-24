@@ -1,0 +1,50 @@
+23-Oct-25 14:03:24 - INFO] - bot -   ... and 6 more users
+[23-Oct-25 14:03:24 - INFO] - bot - ==================================================
+[23-Oct-25 14:03:25 - INFO] - aiohttp.access - 172.31.111.162 [23/Oct/2025:14:03:25 +0000] "GET / HTTP/1.1" 200 177 "https://46657dcf-e3a7-4dba-ac67-635860c8ed87-00-2uw9jvph34feb.kirk.replit.dev:8080/__replco/workspace_iframe.html?initialPath=%2F&id=%3Arn8%3A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+✅ User 7623389594 status in channel -1001764441595: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002903033591: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003011512366: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001910410959: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002071799763: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001848686433: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002756209221: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003190134411: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003087757291: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003091498384: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 is subscribed to all channels
+📥 Retrieved message for user 7623389594, msg_id: 269
+📤 Attempting to send message to user 7623389594
+✅ File sent to user 7623389594 via bot (from saved messages)
+✅ Message sent successfully to user 7623389594
+✅ Message saved to user's saved messages (no download/upload)
+✅ User 7623389594 status in channel -1001764441595: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002903033591: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003011512366: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001910410959: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002071799763: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001848686433: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002756209221: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003190134411: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003087757291: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003091498384: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 is subscribed to all channels
+📥 Retrieved message for user 7623389594, msg_id: 278
+📤 Attempting to send message to user 7623389594
+✅ File sent to user 7623389594 via bot (from saved messages)
+✅ Message sent successfully to user 7623389594
+✅ Message saved to user's saved messages (no download/upload)
+✅ User 7623389594 status in channel -1001764441595: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002903033591: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003011512366: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001910410959: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002071799763: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1001848686433: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1002756209221: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003190134411: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003087757291: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 status in channel -1003091498384: ChatMemberStatus.ADMINISTRATOR
+✅ User 7623389594 is subscribed to all channels
+📥 Retrieved message for user 7623389594, msg_id: 282
+📤 Attempting to send message to user 7623389594
+[23-Oct-25 14:04:41 - WARNING] - pyrogram.types.messages_and_media.message - Empty messages cannot be copied.
+✅ File sent to user 7623389594 via bot (from saved messages)
